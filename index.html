@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://classless.de/classless.css">
+    <title>Coupon Interest Calculator</title>
+</head>
+<body>
+    <h1>Coupon Interest Calculator</h1>
+    <form id="couponForm">
+        <label for="amountInvested">Amount Invested (K)</label>
+        <input type="number" id="amountInvested" name="amountInvested" required><br>
+        <label for="couponRate">Coupon Rate (%)</label>
+        <input type="number" id="couponRate" name="couponRate" required><br>
+        <button type="button" onclick="calculateCoupon()">Calculate Coupon Interest</button>
+    </form>
+    <p id="couponInterestResult"></p>
+
+    <script>
+        function calculateCoupon() {
+            const amountInvested = document.getElementById('amountInvested').value;
+            const couponRate = document.getElementById('couponRate').value;
+            const couponInterest = amountInvested * (couponRate / 100);
+            document.getElementById('couponInterestResult').innerText = "Coupon Interest: " + couponInterest.toFixed(2);
+        }
+    </script>
+</body>
+</html>
